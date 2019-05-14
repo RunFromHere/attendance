@@ -23,17 +23,27 @@ const (
 	User11     = "root"
 	Password11 = "root"
 	Network11  = "tcp"
-	Ip11       = "119.29.121.40"
+	Ip11       = ""
 	LocalIp11  = "localhost"
 	Port11     = 3306
 	DBName11   = "attendance"
+)
+
+//数据库配置
+const (
+	User2     = "root"
+	Password2 = "Gkl616!@#$"
+	Network2  = "tcp"
+	LocalIp2  = "localhost"
+	Port2     = 3306
+	DBName2   = "attendance"
 )
 
 var SqlDB *sql.DB
 
 func init() {
 	var err error
-	SqlDB, err = sql.Open("mysql", ParseSQLUrl(User11, Password11, Network11, LocalIp11, Port11, DBName11))
+	SqlDB, err = sql.Open("mysql", ParseSQLUrl(User2, Password2, Network2, LocalIp2, Port2, DBName2))
 	if err != nil {
 		log.Println("open database fail" + err.Error())
 	}
